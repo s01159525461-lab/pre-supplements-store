@@ -1,0 +1,39 @@
+نشر المتجر على Vercel (مجاني) + قاعدة بيانات Turso (مجانية)
+============================================================
+
+1) اعمل قاعدة بيانات على Turso
+   - ادخل turso.tech وسجّل (بحساب GitHub).
+   - Create Database  ← اختار أي اسم (مثلاً pre-supplements).
+   - من صفحة القاعدة خد قيمتين:
+       Database URL   (بيبدأ بـ libsql://)
+       Create Token   (اعمل Token وانسخه)
+
+2) ارفع المشروع على GitHub
+   - اعمل Repository جديد (Private) وارفع كل الملفات.
+   - متنسخش مجلد data ولا ملف .env  (ملف .gitignore مضاف جاهز).
+
+3) اربطه بـ Vercel
+   - ادخل vercel.com ← Add New ← Project ← اختار الـ Repository.
+   - Framework Preset: Other      (سيب Build Command و Output Directory فاضيين)
+   - في Environment Variables ضيف:
+       TURSO_DATABASE_URL = libsql://...
+       TURSO_AUTH_TOKEN   = التوكن
+       JWT_SECRET         = أي نص عشوائي طويل (24 حرف على الأقل)
+       ADMIN_EMAIL        = ايميلك
+       ADMIN_PASSWORD     = كلمة سر قوية (8 حروف أو أكتر)
+       SEED_DEMO          = 0       (لو مش عايز منتجات تجريبية)
+       PUBLIC_URL         = https://اسم-مشروعك.vercel.app
+       (اختياري) WHATSAPP_TOKEN و WHATSAPP_PHONE_ID
+   - اضغط Deploy.  بعد دقيقة هيطلعلك الرابط.
+
+4) ادخل لوحة التحكم
+   - https://رابطك/admin  بالإيميل وكلمة السر اللي حطيتهم في ADMIN_EMAIL / ADMIN_PASSWORD.
+   - (لو غيّرت الباسورد بعدين من الأدمن، متغيّرش ADMIN_PASSWORD ثاني — بيتقرأ مرة واحدة بس عند إنشاء الحساب.)
+
+ملاحظات مهمة
+------------
+* الصور اللي بترفعها من الأدمن بتتحفظ في قاعدة Turso (الحد 5MB للصورة). الأفضل صور صغيرة (أقل من 500KB).
+* رسائل الواتساب بتتبعت وقت الطلب نفسه. لو فشلت بتظهر في صفحة واتساب في الأدمن وتقدر تعيدها بزر "إعادة".
+* لو الصفحة بتفتح بطيئة أول مرة بعد فترة خمول، ده طبيعي (Cold start) وبعدها بتبقى سريعة.
+* عشان تجرب نفس الإعدادات على جهازك: انسخ .env.example إلى .env وفعّل سطري Turso، وبعدين npm start.
+* لتغيير الباسورد أو إنشاء أدمن: حط قيم Turso في .env وشغّل  npm run admin -- ايميل باسورد

@@ -1,0 +1,20 @@
+{
+  "name": "pre-supplements-store",
+  "version": "1.0.0",
+  "description": "Pre Supplements - متجر مكملات غذائية (عربي/إنجليزي) بباك اند Node.js بدون أي مكتبات خارجية",
+  "main": "local-server.js",
+  "private": true,
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "scripts": {
+    "start": "node --disable-warning=ExperimentalWarning local-server.js",
+    "seed": "node --disable-warning=ExperimentalWarning scripts/reseed.js",
+    "test": "node --disable-warning=ExperimentalWarning scripts/smoke-test.js",
+    "admin": "node --disable-warning=ExperimentalWarning scripts/set-admin.js",
+    "test:wa": "node --disable-warning=ExperimentalWarning scripts/test-whatsapp.js",
+    "verify": "node scripts/verify.js",
+    "test:turso": "node --disable-warning=ExperimentalWarning scripts/test-turso.js",
+    "seed:demo": "node --disable-warning=ExperimentalWarning scripts/seed-demo.js"
+  }
+}

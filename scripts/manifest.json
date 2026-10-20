@@ -1,0 +1,126 @@
+{
+  "public/js/admin.js": {
+    "sha": "868339041f6801c642b174b255db41bb2a3c2908ff8e76d406667b0a0949379f",
+    "size": 45502
+  },
+  "public/js/boot.js": {
+    "sha": "99372c3e64b724b76321ebe14d573c92abd651eac8be5aaf947586947be4844c",
+    "size": 1176
+  },
+  "public/js/core.js": {
+    "sha": "441699345ce5e6c6442d8461ea3fce43529cb75b50a0dae3b00a0cb7b18dd1b1",
+    "size": 15025
+  },
+  "public/js/diag.js": {
+    "sha": "37fd8279cce505022d3a208e315fa33c959365c20742627cecd2c5f466056752",
+    "size": 1636
+  },
+  "public/js/i18n.js": {
+    "sha": "d03faa3f12a5966c01c3e5b41f139e493091f06173585ebb7ca6f8f9e34170f6",
+    "size": 13209
+  },
+  "public/js/pay.js": {
+    "sha": "cdb937e767594d9e5b4642dc0ab441ef1ecd281e0f59debb9974af23e599a1b6",
+    "size": 1074
+  },
+  "public/js/slider.js": {
+    "sha": "4d53f04ad1a2375366f8cafba0f1efc55d47148ddc2d2cc2cce301fd89a81f95",
+    "size": 3323
+  },
+  "public/js/store.js": {
+    "sha": "b4c4c6d9b836087e6ab44a021997d7bcd50ca070b057891c9e57ed103cf57d18",
+    "size": 59666
+  },
+  "public/css/admin.css": {
+    "sha": "ce82c6bbec1bd964de7c35a34b8c10d3b94050442317b478742b7fd65c6419f9",
+    "size": 10405
+  },
+  "public/css/store.css": {
+    "sha": "f15d2bdeeb7da66b2b7bdeb14a5bca99f3892c191b3ba2ba655cdbe06599929c",
+    "size": 35030
+  },
+  "public/css/theme.css": {
+    "sha": "a7afac69eaeb6ef4751e98882a0e4e95eb9623a99a7122c92a5018e1d1cff0f3",
+    "size": 11462
+  },
+  "public/vendor/bootstrap/bootstrap.bundle.min.js": {
+    "sha": "073254afbfc06331b8b548b7fc0532b4ffe2cfdd588368dcc338e7abd50810e1",
+    "size": 80673
+  },
+  "public/vendor/bootstrap/bootstrap.min.css": {
+    "sha": "26db49828d6701fcfce37a96da6ec3f0ed481abae49c8c9969a575b064413cad",
+    "size": 232758
+  },
+  "public/vendor/bootstrap/bootstrap.rtl.min.css": {
+    "sha": "9f908b50f0657f00298fd102dede7c8a0432fcc9d857c4f2637ee71788772d19",
+    "size": 232862
+  },
+  "lib/api.js": {
+    "sha": "3067ec3e2638a2b46dbc1443c2deec73bb1c03e4a607abda2ed5fd5f18b18d83",
+    "size": 47863
+  },
+  "lib/auth.js": {
+    "sha": "f6f5ac50313f261669fcd66b34c82ef6d9cbd4712e365ff2b4f1b3c0ce251513",
+    "size": 3691
+  },
+  "lib/db.js": {
+    "sha": "2db9e7c406d736a691639d2e0a77fc5ee3832a6699bc20f6c30b076dfd5693c2",
+    "size": 7419
+  },
+  "lib/http.js": {
+    "sha": "ecb5ffd49a1c37081e8b4e6a4d08b63e0b082fc984a9b26f2f713fab1c9a2434",
+    "size": 4287
+  },
+  "lib/payments.js": {
+    "sha": "7b21a279f3bd1127d5f3ca9a9baca21567d69e6c55a121cbeec11988667d6bf4",
+    "size": 2679
+  },
+  "lib/seed.js": {
+    "sha": "42d3cde9cb94ccb21f21418b827108c6392e822a12d81a7322513f16006b8f7f",
+    "size": 9033
+  },
+  "lib/whatsapp.js": {
+    "sha": "877b96470c3d7975f23213afa8acc934e764fd60bee26e5877a28bb188c113cf",
+    "size": 7926
+  },
+  "public/index.html": {
+    "sha": "fdf79f45b1f4e300a48a0f5578f8b43dc071725b3960280d99616bc81f214448",
+    "size": 2528
+  },
+  "public/admin/index.html": {
+    "sha": "eb7820ebefc4e74e49089df86644895a9477387826d39420cccc9401377236a0",
+    "size": 1073
+  },
+  "public/pay.html": {
+    "sha": "410bae470b669fcaec2e114c008d682fafa640c13e61b05591268fd9619e4a6b",
+    "size": 1565
+  },
+  "package.json": {
+    "sha": "5ae8f7e87fdef52ba796dc89b78e4cddcdfe6e0ef04bb040522b9918a2b59e0a",
+    "size": 940
+  },
+  "api/index.js": {
+    "sha": "503817c0311dd278ca9e2474f731b5421f4860a5bdf6e0d1961f5a66e1e20a73",
+    "size": 822
+  },
+  "lib/app.js": {
+    "sha": "939bda600447dfc8a37b6f1b151d0a174a718b3ae62cf78e6df004dee12688c2",
+    "size": 5512
+  },
+  "lib/turso.js": {
+    "sha": "8cf1d0f35371b4fa069b227ed8305c6df147d9affc7370288856857efffdb177",
+    "size": 2087
+  },
+  "lib/turso-worker.js": {
+    "sha": "a96daa7c6c1f0a7f97e83a7f6fd8ef7997451fc8af15364b231d4cdf31b0901f",
+    "size": 3337
+  },
+  "vercel.json": {
+    "sha": "eb514c8c6df50d0e462644889fef0204f7b263189aad467226342583e2a96b63",
+    "size": 1188
+  },
+  "local-server.js": {
+    "sha": "7ee620ad2e2cc5ef353b61b13658b1c3b7eed764ee317cce86f0c677727d9e38",
+    "size": 655
+  }
+}
