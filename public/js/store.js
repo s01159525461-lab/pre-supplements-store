@@ -5,7 +5,7 @@
   const ic = (n, s, c) => IF.icon(n, s, c);
 
   /* ---------- حالة التطبيق ---------- */
-  IF.lang = localStorage.getItem('if_lang') === 'en' ? 'en' : 'ar';
+  IF.lang = localStorage.getItem('if_lang') === 'ar' ? 'ar' : 'en';
   const S = { cfg: null, user: null, wish: new Set(), coupon: '', useCb: false, cart: [], draft: null };
   try { S.cart = JSON.parse(localStorage.getItem('if_cart') || '[]'); if (!Array.isArray(S.cart)) S.cart = []; } catch { S.cart = []; }
   const saveCart = () => { try { localStorage.setItem('if_cart', JSON.stringify(S.cart)); } catch {} paintCounts(); };
