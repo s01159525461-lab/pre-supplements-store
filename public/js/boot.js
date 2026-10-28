@@ -3,8 +3,8 @@
   'use strict';
   var BS = '/vendor/bootstrap/';
   var admin = document.documentElement.hasAttribute('data-admin');
-  var lang = 'ar';
-  try { if (!admin && localStorage.getItem('if_lang') === 'en') lang = 'en'; } catch (e) {}
+  var lang = 'en';
+  try { if (!admin && localStorage.getItem('if_lang') === 'ar') lang = 'ar'; } catch (e) {}
   if (admin) { try { lang = localStorage.getItem('if_admin_lang') === 'en' ? 'en' : 'ar'; } catch (e) {} }
   var de = document.documentElement;
   de.lang = lang; de.dir = lang === 'ar' ? 'rtl' : 'ltr'; de.setAttribute('data-bs-theme', 'dark');
