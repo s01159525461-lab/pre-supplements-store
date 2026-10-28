@@ -12,7 +12,7 @@
     box.textContent += '\n• ' + msg;
   }
   window.addEventListener('error', function (e) {
-    if (e.target && e.target !== window && (e.target.src || e.target.href)) show('FILE NOT LOADED: ' + (e.target.src || e.target.href));
+    if (e.target && e.target !== window && (e.target.src || e.target.href) && String(e.target.src || e.target.href).indexOf(location.origin) === 0) show('FILE NOT LOADED: ' + (e.target.src || e.target.href));
     else show((e.message || 'error') + '  @ ' + String(e.filename || '').replace(location.origin, '') + ':' + e.lineno);
   }, true);
   window.addEventListener('unhandledrejection', function (e) { var r = e.reason; show('PROMISE: ' + (r && (r.stack || r.message) || r)); });
