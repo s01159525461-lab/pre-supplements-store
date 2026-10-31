@@ -14,7 +14,7 @@
     ['main', 'التسويق والعملاء'], ['coupons', 'ticket', 'الكوبونات'], ['whatsapp', 'phone', 'واتساب'], ['users', 'users', 'المستخدمون'], ['reviews', 'star', 'التقييمات'],
     ['main', 'النظام'], ['settings', 'gear', 'الإعدادات'], ['audit', 'file', 'سجل النشاط'],
   ];
-  const PAY_METHOD = { cod: 'عند الاستلام', online: 'أونلاين' };
+  const PAY_METHOD = { cod: 'عند الاستلام', online: 'تحويل (إنستاباي / محفظة كاش)' };
   const B = () => window.bootstrap;
 
   /* ---------- مودال (Bootstrap Modal) ---------- */
@@ -337,6 +337,8 @@
       <div class="field"><label>شحن مجاني لو الطلب أكبر من (0 = معطّل)</label><input class="form-control" name="free_shipping_over" type="number" min="0" value="${esc(s.free_shipping_over)}"></div>
       <div class="field"><label>أقصى نسبة كاش باك تتخصم من الطلب %</label><input class="form-control" name="max_cashback_use_pct" type="number" min="0" max="100" value="${esc(s.max_cashback_use_pct)}"></div>
       <label class="check" style="align-self:end;padding-bottom:10px"><input class="form-check-input m-0" type="checkbox" name="cashback_enabled" ${s.cashback_enabled === '1' ? 'checked' : ''}> تفعيل نظام الكاش باك</label>
+      <div class="field"><label>InstaPay (عنوان الدفع أو الرقم)</label><input class="form-control" name="instapay_handle" dir="ltr" maxlength="60" placeholder="name@instapay" value="${esc(s.instapay_handle)}"></div>
+      <div class="field"><label>محفظة كاش: فودافون / اتصالات / أورنج (رقم المحفظة)</label><input class="form-control" name="vodafone_cash_number" dir="ltr" maxlength="20" placeholder="01XXXXXXXXX" value="${esc(s.vodafone_cash_number)}"></div>
       <div class="field full"><label>شريط الإعلان (عربي)</label><input class="form-control" name="announcement_ar" maxlength="200" value="${esc(s.announcement_ar)}"></div>
       <div class="field full"><label>شريط الإعلان (English)</label><input class="form-control" name="announcement_en" maxlength="200" dir="ltr" value="${esc(s.announcement_en)}"></div></div>
       <div id="sErr"></div><button class="btn btn-primary mt-3">${ic('check', 16)} حفظ الإعدادات</button></form>`;

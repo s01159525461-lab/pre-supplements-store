@@ -92,12 +92,18 @@ class Client {
     r = await user.req('POST', '/api/cart/quote', { items: [{ product_id: whey.id, variant_id: wv.id, qty: 1 }], coupon: 'WELCOME10' });
     ok(r.data.discount === Math.round(wv.sale_price * 0.1 * 100) / 100, `كوبون 10% (${r.data.discount})`);
     r = await anon.req('POST', '/api/coupons/validate', { code: 'NOPE', subtotal: 5000 }); ok(r.status === 400, 'كوبون غلط');
+    r = await admin.req('PUT', '/api/admin/settings', { instapay_handle: '', vodafone_cash_number: '' });
+    r = await user.req('POST', '/api/orders', { items: [{ product_id: whey.id, variant_id: wv.id, qty: 1 }], customer: cust, payment_method: 'online' });
+    ok(r.status === 400, 'التحويل مقفول لو مفيش رقم InstaPay/فودافون كاش');
+    r = await admin.req('PUT', '/api/admin/settings', { instapay_handle: 'store@instapay', vodafone_cash_number: '01012345678' }); ok(r.status === 200, 'حفظ أرقام التحويل');
     r = await user.req('POST', '/api/orders', { items: [{ product_id: whey.id, variant_id: wv.id, qty: 1 }], customer: cust, payment_method: 'online', coupon: 'welcome10' });
-    ok(r.status === 200 && r.data.payment?.url?.startsWith('/pay/'), 'طلب أونلاين + رابط دفع');
+    ok(r.status === 200 && r.data.payment?.url?.startsWith('/pay/'), 'طلب تحويل + رابط صفحة الدفع');
     const onl = r.data; ok(onl.discount > 0 && onl.shipping === 60 - 60 + (onl.subtotal - onl.discount >= 2500 ? 0 : 60), 'خصم + شحن');
     const tok = new URL(onl.payment.url, BASE).searchParams.get('t');
-    r = await anon.req('POST', `/api/payments/sandbox/${onl.code}`, { token: 'bad', success: true }); ok(r.status === 403, 'رفض رمز دفع مزيّف');
-    r = await anon.req('POST', `/api/payments/sandbox/${onl.code}`, { token: tok, success: true }); ok(r.data.payment_status === 'paid', 'تأكيد الدفع');
+    r = await anon.req('GET', `/api/payments/manual/${onl.code}?t=bad`); ok(r.status === 403, 'رفض رمز دفع مزيّف');
+    r = await anon.req('GET', `/api/payments/manual/${onl.code}?t=${tok}`); ok(r.status === 200 && r.data.instapay === 'store@instapay' && r.data.vodafone === '01012345678' && r.data.total === onl.total, 'صفحة التحويل بتعرض المبلغ والأرقام');
+    r = await anon.req('GET', '/api/config'); ok(r.data.settings.instapay_handle === 'store@instapay', 'الأرقام ظاهرة في إعدادات المتجر');
+    r = await admin.req('PATCH', `/api/admin/orders/${onl.code}`, { payment_status: 'paid', status: 'confirmed' }); ok(r.status === 200, 'الأدمن أكد الدفع');
     r = await user.req('GET', '/api/orders'); const mine = r.data.items.find((o) => o.code === onl.code); ok(mine.status === 'confirmed' && mine.payment_status === 'paid', 'الطلب اتأكد تلقائيًا بعد الدفع');
     r = await user.req('GET', '/api/me'); const balBefore = r.data.user.cashback_balance;
 

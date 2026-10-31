@@ -90,7 +90,7 @@
       <div class="container">
         <div class="ft-grid">
           <div class="ft-about">${logoHtml(name, half)}<p>${esc(t('f_about'))}</p>
-            <div class="ft-pay"><span>${ic('cash', 16)} ${esc(t('cod'))}</span><span>${ic('card', 16)} ${esc(t('online'))}</span></div></div>
+            <div class="ft-pay"><span>${ic('cash', 16)} ${esc(t('cod'))}</span>${(S.cfg.settings.instapay_handle || S.cfg.settings.vodafone_cash_number) ? `<span>${ic('card', 16)} ${esc(t('online'))}</span>` : ''}</div></div>
           <div><h5>${esc(t('f_links'))}</h5><ul><li><a href="#/shop">${esc(t('shop'))}</a></li><li><a href="#/shop?deals=1">${esc(t('deals'))}</a></li><li><a href="#/brands">${esc(t('brands'))}</a></li><li><a href="#/page/about">${esc(t('about'))}</a></li></ul></div>
           <div><h5>${esc(t('f_help'))}</h5><ul><li><a href="#/track">${esc(t('track'))}</a></li><li><a href="#/account">${esc(t('account'))}</a></li><li><a href="#/cart">${esc(t('cart'))}</a></li></ul></div>
           <div><h5>${esc(t('f_contact'))}</h5><ul class="ft-contact">${phone ? `<li dir="ltr">${ic('phone', 16)}${phone}</li>` : ''}${s.contact_email ? `<li>${ic('mail', 16)}${esc(s.contact_email)}</li>` : ''}<li>${ic('truck', 16)}${esc(t('st_shipping'))}: 27</li></ul></div>
@@ -479,7 +479,7 @@
           ${fld(t('notes'), `<input class="form-control" name="notes" maxlength="300" value="${esc(d.notes ?? '')}">`, 'full')}</div></div>
         <div class="panel"><h3>${ic('card', 20)} ${esc(t('payment'))}</h3>
           <label class="pay-opt ${payMethod === 'cod' ? 'active' : ''}"><input class="form-check-input" type="radio" name="pay" value="cod" ${payMethod === 'cod' ? 'checked' : ''}><span class="po-ic">${ic('cash', 22)}</span><span><b>${esc(t('cod'))}</b><small>${esc(t('cod_p'))}</small></span></label>
-          <label class="pay-opt ${payMethod === 'online' ? 'active' : ''}"><input class="form-check-input" type="radio" name="pay" value="online" ${payMethod === 'online' ? 'checked' : ''}><span class="po-ic">${ic('card', 22)}</span><span><b>${esc(t('online'))}</b><small>${esc(t('online_p'))}</small></span></label></div>
+          ${(S.cfg.settings.instapay_handle || S.cfg.settings.vodafone_cash_number) ? `          <label class="pay-opt ${payMethod === 'online' ? 'active' : ''}"><input class="form-check-input" type="radio" name="pay" value="online" ${payMethod === 'online' ? 'checked' : ''}><span class="po-ic">${ic('card', 22)}</span><span><b>${esc(t('online'))}</b><small>${esc(t('online_p'))}</small></span></label>` : ''}</div>
         <div id="formErr"></div></div>
         <div>${summaryHtml(q, false, `<button class="btn btn-primary btn-lg w-100 mt-3" id="placeBtn">${ic('lock', 18)} ${esc(t('place_order'))}</button>`)}</div></form></div>`;
   });

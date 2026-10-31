@@ -1,10 +1,10 @@
 {
   "public/js/admin.js": {
-    "sha": "868339041f6801c642b174b255db41bb2a3c2908ff8e76d406667b0a0949379f",
-    "size": 45502
+    "sha": "ebb6105a29b65edc5b5900e1a021fcc209aab33c6f3247008cd55ebfbe4285ad",
+    "size": 46050
   },
   "public/js/boot.js": {
-    "sha": "99372c3e64b724b76321ebe14d573c92abd651eac8be5aaf947586947be4844c",
+    "sha": "b64872d11c099e1eda520de9e41d091d7b1afae508b58c9cfff5a03c46e1e6e3",
     "size": 1176
   },
   "public/js/core.js": {
@@ -12,24 +12,24 @@
     "size": 15025
   },
   "public/js/diag.js": {
-    "sha": "1bad0d1eed85c08e200b292621b147306a98cc450b62fdef150b5a5821e8f313",
-    "size": 1708
+    "sha": "380affd74b68547990af53398d9ab9ef22ab0b14dc61a7002fe41b2f699a11ba",
+    "size": 1974
   },
   "public/js/i18n.js": {
-    "sha": "d03faa3f12a5966c01c3e5b41f139e493091f06173585ebb7ca6f8f9e34170f6",
-    "size": 13209
+    "sha": "0d49ec19c0c587c533aa81f0a78b900fc65e440b9c56e806683e911e93e28b0f",
+    "size": 13269
   },
   "public/js/pay.js": {
-    "sha": "cdb937e767594d9e5b4642dc0ab441ef1ecd281e0f59debb9974af23e599a1b6",
-    "size": 1074
+    "sha": "6044578794e369cb8794af91ecde2ccf4e2b71a0147de3676bb5792e0472e5a1",
+    "size": 3773
   },
   "public/js/slider.js": {
     "sha": "4d53f04ad1a2375366f8cafba0f1efc55d47148ddc2d2cc2cce301fd89a81f95",
     "size": 3323
   },
   "public/js/store.js": {
-    "sha": "b4c4c6d9b836087e6ab44a021997d7bcd50ca070b057891c9e57ed103cf57d18",
-    "size": 59666
+    "sha": "92d24a4465887708ed9724f67438745d9d158f041a90dc6ee3f3c51120cbc06f",
+    "size": 59844
   },
   "public/css/admin.css": {
     "sha": "ce82c6bbec1bd964de7c35a34b8c10d3b94050442317b478742b7fd65c6419f9",
@@ -56,24 +56,24 @@
     "size": 232862
   },
   "lib/api.js": {
-    "sha": "3067ec3e2638a2b46dbc1443c2deec73bb1c03e4a607abda2ed5fd5f18b18d83",
-    "size": 47863
+    "sha": "54d545e76c43f8a4186d3bf68d99ec03acae29743328bebcdad199eadfab19fa",
+    "size": 49153
   },
   "lib/auth.js": {
     "sha": "f6f5ac50313f261669fcd66b34c82ef6d9cbd4712e365ff2b4f1b3c0ce251513",
     "size": 3691
   },
   "lib/db.js": {
-    "sha": "2db9e7c406d736a691639d2e0a77fc5ee3832a6699bc20f6c30b076dfd5693c2",
-    "size": 7419
+    "sha": "45d81c328950d3bc1defe6708a49e53ac1dc5f5da5eaec3c50d7ace2fa0cb3e3",
+    "size": 7492
   },
   "lib/http.js": {
     "sha": "ecb5ffd49a1c37081e8b4e6a4d08b63e0b082fc984a9b26f2f713fab1c9a2434",
     "size": 4287
   },
   "lib/payments.js": {
-    "sha": "7b21a279f3bd1127d5f3ca9a9baca21567d69e6c55a121cbeec11988667d6bf4",
-    "size": 2679
+    "sha": "a7cd5354125a06c476712a0a732b9e386860a00d4d507bbbf901109d15d4f1b2",
+    "size": 3055
   },
   "lib/seed.js": {
     "sha": "42d3cde9cb94ccb21f21418b827108c6392e822a12d81a7322513f16006b8f7f",
@@ -84,16 +84,16 @@
     "size": 7926
   },
   "public/index.html": {
-    "sha": "fdf79f45b1f4e300a48a0f5578f8b43dc071725b3960280d99616bc81f214448",
-    "size": 2528
+    "sha": "440fcdf1e946bbc666c42ab7737aee65a113de47a7bc49dfbb76fdfe54c375cc",
+    "size": 2490
   },
   "public/admin/index.html": {
     "sha": "eb7820ebefc4e74e49089df86644895a9477387826d39420cccc9401377236a0",
     "size": 1073
   },
   "public/pay.html": {
-    "sha": "410bae470b669fcaec2e114c008d682fafa640c13e61b05591268fd9619e4a6b",
-    "size": 1565
+    "sha": "738533e76b62c8bb474e7b56216c2ad88c316569fe12bc773368615f635c976c",
+    "size": 813
   },
   "package.json": {
     "sha": "5ae8f7e87fdef52ba796dc89b78e4cddcdfe6e0ef04bb040522b9918a2b59e0a",

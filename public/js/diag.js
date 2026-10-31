@@ -12,10 +12,12 @@
     box.textContent += '\n• ' + msg;
   }
   window.addEventListener('error', function (e) {
-    if (e.target && e.target !== window && (e.target.src || e.target.href) && String(e.target.src || e.target.href).indexOf(location.origin) === 0) show('FILE NOT LOADED: ' + (e.target.src || e.target.href));
-    else show((e.message || 'error') + '  @ ' + String(e.filename || '').replace(location.origin, '') + ':' + e.lineno);
+    var own = function (u) { return String(u || '').indexOf(location.origin) === 0; };
+    if (e.target && e.target !== window && (e.target.src || e.target.href)) { if (own(e.target.src || e.target.href)) show('FILE NOT LOADED: ' + (e.target.src || e.target.href)); return; }
+    if (!own(e.filename)) return; // أخطاء سكريبتات خارجية (إنستجرام / فيسبوك) مش بتاعتنا
+    show((e.message || 'error') + '  @ ' + String(e.filename).replace(location.origin, '') + ':' + e.lineno);
   }, true);
-  window.addEventListener('unhandledrejection', function (e) { var r = e.reason; show('PROMISE: ' + (r && (r.stack || r.message) || r)); });
+  window.addEventListener('unhandledrejection', function (e) { var r = e.reason; if (r && (r.stack || r.message) && String(r.stack || '').indexOf(location.origin) !== -1) show('PROMISE: ' + (r.stack || r.message)); });
   setTimeout(function () {
     var app = document.getElementById('app');
     if (app && app.querySelector('.skel') && !document.querySelector('#header .hdr')) show('The page is still loading after 6s. window.IF=' + (typeof window.IF) + ', IF.T=' + (window.IF && typeof window.IF.T) + ', bootstrap=' + typeof window.bootstrap);
