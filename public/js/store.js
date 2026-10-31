@@ -40,7 +40,7 @@
   function renderChrome() {
     window.IF_BOOT && window.IF_BOOT.setDir(IF.lang);
     const s = S.cfg.settings;
-    const name = esc(s.store_name || 'Pre Supplements'), half = Math.ceil(name.length / 2);
+    const name = esc(s.store_name || 'Pre Supplements'), sp = name.indexOf(' '), half = sp > 0 ? sp + 1 : Math.ceil(name.length / 2);
     const phone = esc(s.contact_phone || '');
 
 
