@@ -25,7 +25,7 @@
 
   /* ---------- الهيدر والفوتر ---------- */
   const BOLT = '<svg viewBox="0 0 32 32" aria-hidden="true"><defs><linearGradient id="lg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#d9ff5c"/><stop offset="1" stop-color="#b6f01f"/></linearGradient></defs><rect width="32" height="32" rx="9" fill="url(#lg)"/><path d="M18 4 8 18h7l-2 10 11-15h-7z" fill="#0b1200"/></svg>';
-  const logoHtml = (name, half) => `<a class="logo" href="#/" aria-label="${name}">${BOLT}<span>${name.slice(0, half)}<b>${name.slice(half)}</b></span></a>`;
+  const logoHtml = (name, half) => `<a class="logo" href="#/" aria-label="${name}">${BOLT}<span><b>${name.slice(0, half)}</b>${name.slice(half)}</span></a>`;
 
   function navLinks() {
     return [
